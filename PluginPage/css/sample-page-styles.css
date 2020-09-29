@@ -1,0 +1,106 @@
+/* Add your comments here */
+
+body {
+	background: url(../images/background.jpg);
+	color: #474747;
+	font-family: 'Roboto Slab', serif;
+	margin: 25px;
+	padding: 20px;
+}
+
+section {
+
+}
+
+div {
+	background-color: #4E83AD;
+}
+
+aside.left {
+float: left;
+margin: 20px;
+}
+
+aside.right {
+float: right;
+margin: 20px;
+}
+
+p {
+	margin: 20px;
+}
+
+ul {
+
+}
+
+ul.navigation {
+
+}
+
+ul.navigation a:link {
+	color: #4C367C;
+}
+
+ul.navigation a:visited {
+	color: #6FCF80;
+}
+
+ul.navigation a:hover {
+	color: #6FCF80;
+}
+
+a:link {
+	color: #4C367C;
+}
+
+a:visited {
+	color: #6FCF80;
+}
+
+a:hover {
+	color: #6FCF80;
+}
+
+h1 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+h2 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+h3 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+h4 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+h5 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+h6 {
+	font-family: 'Crafty Girls', cursive;
+	margin: 5px;
+}
+
+header {
+	font-size: 2em;
+}
+
+.special {
+
+}
+
+img {
+	
+}
+
