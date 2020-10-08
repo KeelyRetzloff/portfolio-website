@@ -15,12 +15,18 @@ a {
     color: #F4EED7;
 }
 
-a:focus {
-    color: #E9C322;
+a:focus, a:visited {
+    color: #e4eed7;
+    background-color: transparent;
+}
+
+.nav-pills a:focus, .nav-pills a:hover {
+    background-color: transparent !important;
 }
 
 a:hover {
     color: #E9C322;
+    background-color: transparent;
 }
 
 h1,
@@ -36,10 +42,6 @@ h2 {
 
 h3 {
     letter-spacing: 3px;
-}
-
-h4 {
-    margin-left: 20px;
 }
 
 p {
@@ -136,33 +138,37 @@ img.loading {
 
 li a {
     color: #F4EED7;
-    padding: 10px 40px !important;
+    padding: 10px 40px;
 }
 
-li a.active {
-    background-color: #f4eed7 !important;
-    color: #263A3A !important;
-}
+.nav-pills li a::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 5%;
+    width: 0;
+    height: 1px;
+ 
+    opacity: 0;
+    background-color: #E9C322;
+  }
 
-ul.nav-pills a[href="#home"].active {
-    background-color: transparent !important;
-    color: #F4EED7 !important;
-}
+  .nav-pills li a:hover::after {
+  opacity: 1;
+  width: 90%;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.55s;
+  }
 
-ul.nav-pills a[href="#home"]:hover {
-    background-color: #F4EED7 !important;
-    color: #263A3A !important;
-}
+  .nav-pills li a.active::after {
+      transition: none;
+      width: 90%;
+      opacity: 1;
+  }
 
-.nav-pills a:hover {
-    color: #263A3A !important;
-    background: #f4eed7 !important;
-}
-
-.nav-pills li a:focus {
-    color: #F4EED7;
-    background-color: transparent;
-}
+  .nav-pill li a:hover {
+      background: transparent !important;
+  }
 
 .navbar-inverse {
     background-color: #263A3A;
@@ -217,13 +223,13 @@ button.navbar-toggle {
     background-position: center;
     height: 100vh;
     min-height: 700px;
-    max-width: 2400px;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
     position: relative;
     margin:auto;
 }
+
 
 .coverbackground {
     position: absolute;
@@ -232,7 +238,7 @@ button.navbar-toggle {
     width: 100%;
     height: 100%;
     min-height: 700px;
-    background-color: rgba(38, 58, 58, .7);
+    background-color: rgba(38, 58, 58, .8);
 }
 
 .cover-portfolio {
@@ -260,19 +266,17 @@ button.navbar-toggle {
 
 #hello {
     margin: auto;
-    padding: 20px 0 80px 0;
+    padding: 20px 0 12rem 0;
     width: 100%;
 }
 
 .center {
     color: #E9C322 !important;
     position: relative;
-    top: 55px;
+    top: 8rem;
     padding: 81px 5px;
     width: 100%;
 }
-
-
 
 .lead {
     padding: 0;
@@ -319,8 +323,8 @@ button.navbar-toggle {
 
 .pic {
     margin: auto;
-    max-width: 250px;
-    height: 250px;
+    max-width: 220px;
+    height: 220px;
     width: 100%;
     border: 3px solid #e9c322;
 }
@@ -329,7 +333,7 @@ button.navbar-toggle {
     margin: auto;
     padding: 0 15px;
     font-size: 120%;
-    line-height: 200%;
+    line-height: 180%;
     text-align: center;
     color: #F4EED7;
 }
@@ -346,34 +350,55 @@ button.navbar-toggle {
     padding: 10px 0 20px;
 }
 
-.classes {
-    margin-bottom: 50px;
+ul.flex-table {
+    list-style-type: none;
+    font-size: 5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
-table {
-    min-width: 100%;
-    padding: 20px;
-    margin: 10px auto;
-    table-layout: fixed;
+div.flex-row {
+    margin: auto;
+    display: flex;
+}
+
+li.flex-cell i,
+.about .flex-cell h4 {
+    margin: 0 auto;
+    padding: 25px;
+}
+
+
+.buttons {
+    text-align: center;
+    margin: auto;
+}
+
+.buttons .btn {
+   border: solid 2px #e9c322;
+   margin: 0 auto 10px;
    
 }
 
-table td {
-    margin: auto;
-    text-align: center;
-    padding: 5px;
-    border: solid 1px #E9C322;
+.buttons .btn:hover {
+    animation: backgroundglow 3s linear 0s infinite;
+    border: solid 2px #263A3A;
 }
 
-td i,
-.about td h4 {
-    margin: auto;
-    padding: 10px 0;
-}
-
-.grid-sizer,
-.grid-item {
-    width: 100%;
+@keyframes backgroundglow {
+    0% {
+        background-color: #F4EED7;
+    }
+    50% {
+        background-color: #E9C322;
+    }
+    100% {
+        background-color: #F4EED7;
+    }
 }
 
 
@@ -399,8 +424,9 @@ td i,
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
     background-color: rgba(38, 58, 58, .8);
     display: flex;
     align-items: center;
@@ -409,43 +435,33 @@ td i,
     font-size: 5em;
 }
 
+
+.grid-sizer,
+.grid-item {
+    width: 100%;
+}
+
+.grid-item{
+    padding: 20px;
+}
+
 .grid-item:hover .photobackground {
     visibility: visible;
     transition: all 0.4s ease-in;
 }
 
+.grid-item .projecttitle {
+    opacity: 0;
+    margin-left: 4%;
+}
+
 .grid-item:hover .projecttitle {
-    visibility: visible;
+    opacity: 1;
     transition: all 0.6s ease-in;
+    
 }
 
-.buttons {
-    text-align: center;
-    margin: auto;
-    padding: 50px 0;
-}
 
-.buttons .btn {
-   border: solid 3px #263A3A;
-   
-}
-
-.buttons .btn:hover {
-    animation: backgroundglow 3s linear 0s infinite;
-    border: solid 3px #263A3A;
-}
-
-@keyframes backgroundglow {
-    0% {
-        background-color: #F4EED7;
-    }
-    50% {
-        background-color: #E9C322;
-    }
-    100% {
-        background-color: #F4EED7;
-    }
-}
 
 
 /*contact styles*/
@@ -461,25 +477,28 @@ td i,
     width: 100%;
 }
 
-input {
-    margin: 10px;
+form input {
+    margin: 10px 5px;
+    padding: 6px;
     border: none;
+    font-size: 1.5rem;
+    width: 70%;
     display: flex;
     border-radius: 4px;
 }
 
 form .btn {
     margin: 20px auto;
+    width: 100%;
     display: flex;
 }
 
-textarea {
+form textarea {
     display: flex;
-    width: 95%;
-    height: 150px;
+    width: 100%;
+    height: 130px;
     margin: auto;
-    padding: 12px 5px;
-    float: none;
+    padding: 12px;
 }
 
 .header,
@@ -497,7 +516,7 @@ textarea {
     font-size: 20px;
     background: #263A3A;
     padding: 10px 80px;
-    border: solid 3px #263A3A;
+    border: solid 3px #e9c322;
 }
 
 .btn:hover {
@@ -608,7 +627,7 @@ textarea {
     .row.shrink #logo2 {
         display: block;
         padding: 0;
-        width: 150px;
+        width: 125px;
         margin-bottom: 0;
     }
     .icon {
@@ -620,7 +639,7 @@ textarea {
     #contacttitle {
         padding: 40px 0 25px 0;
         margin: auto;
-        width: 75%;
+        width: 95%;
         max-width: 700px;
     }
     #hello {
@@ -642,22 +661,23 @@ textarea {
     }
     .pic {
         margin: 15px auto;
-        max-width: 300px;
-        height: 300px;
+        max-width: 250px;
+        height: 250px;
     }
     .about {
         max-width: 90%;
         display: flex;
+        align-items: center;
         flex-direction: row;
     }
     .about .biocontainer {
     width: 50%;
-    margin: 10px;
+    margin: 5px;
     }
 
     .about .skillscontainer {
     width: 50%;
-    margin: 90px 40px;
+    margin: 30px;
     }
     .about h3 {
         font-size: 1.5em;
@@ -665,11 +685,9 @@ textarea {
     .about p {
         padding-bottom: 20px;
     }
-    table {
-        width: 75%;
-    }
-    table td {
-        font-size: 2em;
+
+    ul.flex-table li.flex-cell {
+        font-size: 60px;
         padding: 15px;
     }
     .portfolio {
@@ -698,7 +716,9 @@ textarea {
     input {
         color: #263A3A;
         background: #F4EED7;
-        margin: 5px;
+        margin: 5px 0;
+        width: 50%;
+        padding: 5px;
         border: none;
         display: flex;
         border-radius: 4px;
@@ -706,7 +726,7 @@ textarea {
     textarea {
         color: #263A3A;
         width: 100%;
-        height: 150px;
+        height: 130px;
         margin: auto;
         padding: 12px 20px;
         box-sizing: border-box;
@@ -717,10 +737,10 @@ textarea {
     }
     form {
         margin: auto;
-        width: 60%;
+        width: 40%;
     }
     form .btn {
-        margin: 10px 5px;
+        margin: 20px 0;
         display: flex;
     }
     .socialmedia>a {
