@@ -223,10 +223,13 @@ button.navbar-toggle {
     background-position: center;
     height: 100vh;
     min-height: 700px;
+    min-height: -webkit-fill-available;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
     position: relative;
+    top:0;
+    left:0;
     margin:auto;
 }
 
