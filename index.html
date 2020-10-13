@@ -52,8 +52,8 @@
 
 <body>
     <div id='loading_wrap' style='position:fixed; height:100%; width:100%; overflow:hidden; top:0; left:0; z-index: 5000; background: #263A3A;'>
-        <img class="loading" src="images/loading_icon.png" />
-        <p style="margin: auto; position: relative; top: 50%; color: #E9C322;">Loading</p>
+        <img class="loading" src="images/loading_icon.png" title="Loading in Progress" alt="Loading in Progress" />
+        <p style="margin: auto; position: relative; top: 50%; color: #E9C322;">Loading...</p>
     </div>
     <div id="loading_content">
         <div id="nav">
@@ -191,7 +191,7 @@
                     <div class="grid-sizer"></div>
 
                     <div class="grid-item">
-                        <a href="projects/treem.html" title="TREEM"><img class="portfolio" src="images/treem/logo.png" />
+                        <a href="projects/treem.html" title="TREEM"><img class="portfolio" src="images/Treem/logo.png" />
                             <div class="photobackground">
                                 <div class="projecttitle">TREEM</div>
                             </div>
@@ -261,14 +261,14 @@
                     <p><b>* required </b>(you know the drill)</p>
                 </div>
 
-                <form action="https://formspree.io/keely.retzloff@gmail.com" method="POST" data-scroll>
+                <form name="Contact" data-netlify="true" method="POST" data-scroll>
                     <h4>Name<b>*</b></h4>
                     <input type="text" name="name" required data-toggle="tooltip" data-placement="right" title="So I can address you">
                     <h4>E-mail<b>*</b></h4>
                     <input type="email" name="_replyto" required data-toggle="tooltip" data-placement="right" title="So I can contact you">
                     <h4>Opportunities, Questions, Thoughts, Concerns<b>*</b></h4>
                     <textarea name="message" required data-toggle="tooltip" data-placement="right" title="Let me know what you're interested in talking about! :)">
-</textarea>
+                    </textarea>
                     <input type="submit" value="Send" class="send btn">
                 </form>
 
@@ -277,14 +277,14 @@
 
 
             <footer class="footer">
-                <div class="socialmedia">
-                    <a href="mailto:keely.retzloff@gmail.com"><i class="far fa-envelope fa-2x" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/k33ls_"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/keely-retzloff"><i class="fab fa-linkedin fa-2x"
-              aria-hidden="true"></i></a>
-                    <a href="https://github.com/KeelyRetzloff"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
-                    <a href="https://dribbble.com/k33ls"><i class="fab fa-dribbble fa-2x" aria-hidden="true"></i></a>
-                </div>
+                <ul class="socialmedia">
+                    <li><a href="mailto:keely.retzloff@gmail.com" target="_blank" aria-label="Email me"><i class="far fa-envelope fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/k33ls_" target="_blank" aria-label="Find me on Twitter"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/keely-retzloff" target="_blank" aria-label="Find Me on LinkedIn"><i class="fab fa-linkedin fa-2x"
+              aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/KeelyRetzloff" target="_blank" aria-label="Find Me on Github"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></li>
+              <li><a href="https://dribbble.com/k33ls" target="_blank" aria-label="Find Me on Dribbble"><i class="fab fa-dribbble fa-2x" aria-hidden="true"></i></a></li>
+                    </ul>
                 <p>&copy;
                     <script type="text/javascript">
                         document.write(new Date().getFullYear());

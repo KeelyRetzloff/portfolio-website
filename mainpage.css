@@ -133,12 +133,11 @@ img.loading {
     }
 }
 
-
 /*nav menu styles*/
 
 li a {
     color: #F4EED7;
-    padding: 10px 40px;
+    padding: 10px 20px;
 }
 
 .nav-pills li a::after {
@@ -220,6 +219,7 @@ button.navbar-toggle {
 .cover {
     background: url(images/headercover.jpg);
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     min-height: 700px;
@@ -245,7 +245,8 @@ button.navbar-toggle {
     background: url(images/portfoliotexture.jpg);
     background-attachment: fixed;
     background-position: center;
-    min-height: 3000px;
+    min-height: 2500px;
+    height: 100%;
     max-width: 2400px;
     width: 100%;
     overflow: hidden;
@@ -491,6 +492,7 @@ form .btn {
     margin: 20px auto;
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 form textarea {
@@ -538,24 +540,27 @@ form textarea {
 .footer {
     padding: 30px 0 25px 0;
     color: #f4eed7;
-    background: #263A3A;
-    background-image: url(images/footer.png);
-    background-position: center 15%;
-    background-repeat: repeat;
-    position: absolute;
-    width: 100%;
+    background-color: #263A3A;
     height: 130px;
 }
 
 .socialmedia {
     text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+    padding: 0 !important;
 }
 
 .socialmedia>a {
     margin: 5px;
     padding: 10px;
 }
+
+.socialmedia li {
+    list-style-type: none;
+}
+
 
 
 /* Responsive */
@@ -743,7 +748,5 @@ form textarea {
         margin: 20px 0;
         display: flex;
     }
-    .socialmedia>a {
-        margin: 10px;
-    }
+
 }
