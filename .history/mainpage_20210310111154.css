@@ -1,0 +1,785 @@
+/*
+Portfolio Stylesheet utilizing Bootstrap and Sass
+by Keely Retzloff
+
+
+    ||   Table of Contents    ||
+    ||   I. Variables         ||
+    ||   II. General Styles   ||
+    ||   III. Nav Menu        ||
+    ||   IV. Home             ||
+    ||   V. About             ||
+    ||   VI. Portfolio        ||
+    ||   VII. Contact         ||
+    ||   VIII. Footer         ||
+    ||   IX. Media Queries    ||
+
+
+*/
+
+/* I. Variables*/
+:root{
+    --navy: #234a6c;
+    --beige: #f2ece9;
+    --red: #ce4141;
+    --lightblue: #b3c9d5;
+}
+
+/*II-a. General Styles*/
+body {
+    background-color: var(--navy);
+    font-family: soleil, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--beige);
+}
+
+a:focus, a:visited {
+    color: var(--beige);
+}
+
+a:hover {
+    color: var(--red);
+    background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h5 {
+    font-family: grad, serif;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.header-container h1{
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: 2px;
+}
+span.serif {
+    font-family: grad, serif;
+    font-style: normal;
+    font-weight: 300;
+    text-transform:uppercase;
+    width: 100%;
+}
+
+span.sans {
+    font-family: soleil, helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-transform:uppercase;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h2 span {
+    letter-spacing: .1em;
+    font-size: 1em;
+}
+
+h2 span.sans {
+    font-size: 1.05em;
+}
+
+h3 {
+    margin: auto;
+    padding: 5px;
+    font-size: 1.4em;
+    color: var(--beige);
+}
+
+p {
+    text-align: center;
+}
+
+#about p {
+    text-align: left;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+[data-scroll] {
+  transition: opacity 1.5s;
+}
+[data-scroll="in"] {
+  opacity: 1;
+}
+[data-scroll="out"] {
+  opacity: 0;
+}
+
+span.icon-bar {
+    background-color: var(--beige) !important;
+}
+
+/* II-b. section styles*/
+#home, #about, #portfolio, #contact {
+    margin: auto;
+}
+
+#portfolio #portfoliotitle {
+    color: var(--navy);
+}
+
+#about {
+    background: var(--navy);
+    margin-bottom: 50px;
+}
+
+#about #aboutmetitle {
+    color: var(--beige);
+}
+
+#contact {
+    background: var(--lightblue);
+    padding-bottom: 50px;
+}
+
+#contact #contacttitle {
+    color: var(--navy);
+}
+
+#home {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#aboutmetitle::after, #portfoliotitle::after, #contactitle::after {
+    content: "";
+    position: absolute;
+    bottom: auto;
+    margin-top: 60px;
+    left: 37%;
+    width: 25%;
+    height: 1px;
+    border-bottom: solid 4px var(--red);
+}
+
+/*III. Nav Menu styles*/
+nav ul.nav li a {
+    color: var(--navy);
+    transition: all .5s;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+}
+
+nav.navbar button.navbar-toggler span.navbar-toggler-icon {
+    background-image: url(images/assets/menu.svg);
+}
+.sticky {
+    background-color: var(--navy);
+    -webkit-transition: all ease .4s;
+    transition: all ease .4s;
+}
+
+nav.navbar.sticky button.navbar-toggler span.navbar-toggler-icon {
+    background-image: url(images/assets/menu-sticky.svg);
+}
+
+nav.sticky ul.nav li a {
+    color: var(--beige);
+    transition: all .5s;
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 5%;
+    width: 0;
+    height: 2px;
+    opacity: 0;
+    background-color: var(--red);
+  }
+
+  .nav li a:hover::after {
+  opacity: 1;
+  width: 90%;
+  transition: all 0.5s ease;
+  }
+
+  .nav li a:focus{
+    border: none;
+  }
+
+  .nav li a.active::after {
+      transition: none;
+      width: 90%;
+      opacity: 1;
+  }
+
+nav.navbar{
+    text-align: center;
+    float: none;
+    padding: 0 5%;
+    margin: 0;
+}
+
+#logo {
+    width: 70px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+nav button.navbar-toggler span {
+    color: var(--beige);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+nav.sticky button.navbar-toggler span{
+    color: var(--beige);
+}
+/* IV. Home section styles*/
+.cover {
+    background:#f2ece9f2 url(images/headercover.jpg) center left no-repeat fixed;
+    background-blend-mode:screen;
+    background-size: cover;
+    height: 100vh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    top:0;
+    left:0;
+    margin:auto;
+}
+
+.cover-portfolio {
+    background:#f2ece9d8 url(images/portfoliotexture.jpg) center center no-repeat fixed;
+    background-blend-mode:screen;
+    min-height: 2500px;
+    height: 100%;
+    max-width: 2400px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    margin:auto;
+}
+
+
+#hello {
+    margin: auto;
+    padding: 20px 0 12rem 0;
+    width: 100%;
+}
+
+.header-container {
+    padding: 11.5vh 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 span {
+    font-size: 5.5rem;
+    line-height: .80em;
+    letter-spacing: 3px;
+}
+
+h1 span.second-header {
+    margin-bottom: 25px;
+}
+
+h2.center {
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin: 15px 0 10px;
+}
+
+.center {
+    color: var(--navy);
+    position: relative;
+    top: 5rem;
+    padding: 81px 5px;
+    width: 100%;
+    margin: auto;
+}
+
+.header-container h1 span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    border-bottom: solid 5px var(--red);
+}
+
+button.discover {
+    border: double 5px var(--lightblue);
+    font-family: grad, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    background: none;
+    color: #234a6c;
+    padding: 8px 30px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+a button.discover:hover {
+    background: var(--lightblue);
+    transition: all ease-in-out .5s;
+}
+
+.arrow-down {
+    padding-top: 45px;
+    max-width: 35px;
+}
+
+/*V. About section styles*/
+#aboutmetitle {
+    width: 100%;
+    padding: 20px 5px 0 5px;
+}
+
+#about .pic {
+    margin: auto;
+    width: 100%;
+    border: double 5px var(--beige);
+}
+
+.about {
+    margin: auto;
+    padding: 0 15px;
+    font-size: 120%;
+    line-height: 180%;
+    text-align: center;
+    color: var(--beige);
+}
+
+ul.flex-table {
+    list-style-type: none;
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    color: var(--beige);
+}
+
+div.flex-row {
+    margin: auto;
+    display: flex;
+}
+
+.about .btn {
+   border: solid 2px var(--lightblue);
+   margin: 0 auto 10px;
+}
+
+.about .btn:hover {
+    background-color: var(--lightblue);
+    border: solid 2px var(--navy);
+}
+
+/* VI. Portfolio styles*/
+#portfoliotitle {
+    padding: 20px 5px 100px 5px;
+    margin: auto;
+    width: 100%;
+}
+
+.portfolio {
+    width: 100%;
+    max-width: 550px;
+    padding: 0;
+}
+
+.container-portfolio {
+    padding: 0;
+}
+
+#portfolio div.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:  repeat(3, 1fr);
+}
+
+.grid-item{
+    padding: 10px;
+    width: 100%;
+}
+
+.grid-item h3 {
+    color: var(--navy);
+}
+
+.grid-item .img-container {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.grid-item .img-container:hover img{
+    height: 100%;
+    width: 100%;
+    transition: all 4s;
+}
+
+.grid-item .img-container img {
+    width: 110%;
+    max-width: 500px;
+    height:110%;
+    overflow: hidden;
+    transition: all 5s;
+}
+
+/*VII. Contact styles*/
+#contacttitle {
+    padding: 20px 50px 0 50px;
+    margin: auto;
+    width: 100%;
+}
+#contact .pic {
+    max-width: 450px;
+}
+
+
+
+#contact .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact {
+    color: var(--navy);
+}
+
+#contact a {
+    color: var(--navy);
+    font-family:grad, serif;
+    font-style: italic;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+.text {
+    padding: 0 5em;
+    width: 100%;
+    margin: auto;
+}
+
+#contact .container form label {
+    text-align: left;
+    margin: 10px auto;
+    display: block;
+}
+
+form input {
+    color: var(--navy);
+    background: var(--beige);
+    margin: 8px 0;
+    padding: 6px;
+    border: none;
+    font-size: 1em;
+    width: 100%;
+    display: flex;
+}
+
+form .btn {
+    margin: 16px auto;
+    width: 30%;
+    display: block;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+    margin: 8px 0;
+    padding: 6px;
+    border: none;
+    color: var(--navy);
+    background-color: var(--beige);
+    resize: none;
+}
+
+.btn {
+    margin: 25px auto;
+    font-family: grad, serif;
+    font-style: italic;
+    color: var(--lightblue);
+    font-size: 1.2rem;
+    background: var(--navy);
+    padding: 10px 30px;
+    border: double 5px var(--lightblue);
+    transition: all 1s;
+}
+
+.btn:hover {
+    background: var(--lightblue);
+    color: var(--navy);
+    text-decoration: none;
+    border: double 5px var(--navy);
+    transition: all .9s;
+}
+
+/* VIII. Footer styles */
+.header,
+.footer {
+    padding: 0 15px;
+}
+
+.footer {
+    padding: 30px 0 25px 0;
+    color: var(--beige);
+    background-color: var(--navy);
+    height: 130px;
+}
+
+footer span.watermark {
+    font-family: beloved-script, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.1em;
+    padding: 0 8px;
+
+}
+
+.socialmedia {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+    padding: 0;
+}
+
+.socialmedia>a {
+    margin: 5px;
+    padding: 10px;
+}
+
+.socialmedia li a:focus, .socialmedia li a:visited {
+    color:var(--beige);
+}
+
+.socialmedia li a:hover {
+    color: var(--red);
+}
+
+.socialmedia li {
+    list-style-type: none;
+    margin: 0 20px;
+}
+
+
+/* IX. Responsive Media Queries */
+@media screen and (max-width: 600px) {}
+@media screen and (max-width: 768px) {
+    nav.navbar {
+        padding: 1%;
+    }
+    #logo {
+        width: 50px;
+    }
+
+    #home {
+        min-height: 600px;
+    }
+
+    .cover {
+        animation:none;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .center, #hello {
+        padding: .5em;
+    }
+    #hello span {
+        font-size: 2.5em;
+    }
+
+    h2.center {
+        font-size: 1.5em;
+    }
+
+    button.discover {
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    .arrow-down {
+        width: 45px;
+    }
+
+    #contact .contact {
+        flex-wrap: wrap;
+    }
+    #contact .piccontainer, #contact .formcontainer {
+        width: 100%;
+    }
+    
+
+}
+
+@media screen and (max-width: 900px) {
+    .about .piccontainer, .about .biocontainer {
+        margin: 1em !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .about .piccontainer, .about .biocontainer {
+        margin: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    ul.nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 50vh;
+        padding-left: 0;
+    }
+
+    ul.nav li {
+        padding: 10
+    }
+
+
+}
+
+@media screen and (min-width: 769px) {
+
+    img {
+        display: block;
+        margin: auto;
+    }
+    .container {
+        max-width: 1800px;
+        width: 100%;
+        padding: 0 5%;
+    }
+    .container-cover {
+        height: 100%;
+    }
+    #logo {
+        display: block;
+        width: 70px;
+        padding: 15px 0;
+    }
+    .icon {
+        max-width: 40px;
+        padding: 5px;
+    }
+    #hello,
+    #aboutmetitle,
+    #portfoliotitle,
+    #contacttitle {
+        padding: 130px 0 20px 0;
+        margin: auto;
+        width: 95%;
+        max-width: 700px;
+    }
+    #hello {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    #portfoliotitle {
+        padding-bottom: 100px;
+    }
+    .center {
+        position: relative;
+        top: 130px;
+        padding: 10px 5px;
+        margin: auto;
+    }
+    .pic {
+        margin: 15px auto;
+        }
+    .about {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .about .piccontainer, .about .biocontainer {
+    width: 50%;
+    }
+    .about p {
+        padding-bottom: 20px;
+    }
+    ul.flex-table li.flex-cell {
+        padding: 12px;
+        font-size: .95em;
+    }
+    #about ul.flex-table li.flex-cell p {
+        text-align: center;
+    }
+    .portfolio {
+        margin: auto;
+        width: 100%;
+        max-width: 1800px;
+    }
+   .cover-portfolio {
+        min-height: 1500px;
+        max-width: 1800px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin:auto;
+    }
+
+    #contact .piccontainer, #contact .formcontainer {
+        width: 50%;
+    }
+    form {
+        margin: auto;
+        padding: 4% 10%;
+        width: 100%;
+    }
+    form input {
+        margin: 5px 0;
+        width: 100%;
+        padding: 6px;
+        display: flex;
+    }
+    form textarea {
+        width: 100%;
+        height: 130px;
+        margin: auto;
+        padding: 8px 6px;
+    }
+    form .btn {
+        margin: 16px auto;
+        display: flex;
+    }
+}
