@@ -60,22 +60,23 @@ img {
 }
 
 /*nav menu styles*/
-div.nav a {
+div.nav .btn {
   color: var(--navy);
-  background-color: var(--lightblue);
+  background-color: transparent;
   border: double 5px var(--navy);
   font-size: 1.2em;
   text-decoration: none;
+  font-family: grad, serif;
   margin: 10px;
   padding: 8px 30px !important;
 }
 
- div.nav a:hover {
-  color:var(--lightblue);
-  background: var(--navy);
+ div.nav .btn:hover {
+  color:var(--navy);
+  background: var(--lightblue);
 }
 
-div.nav a:focus {
+div.nav .btn:focus {
   text-decoration: underline;
 }
 

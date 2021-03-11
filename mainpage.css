@@ -421,39 +421,47 @@ ul.flex-table {
 #portfolio div.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows:  repeat(3, 1fr);
+    grid-template-rows:  repeat(auto-fit, 1fr);
 }
 
 .grid-item{
-    padding: 10px;
-    width: 100%;
+    border:solid 3px var(--lightblue);
+    background:white;
 }
 
 .grid-item h3 {
     color: var(--navy);
+    margin: 3%;
+}
+
+.grid-item:hover a {
+    text-decoration: none;
 }
 
 .grid-item .img-container {
-    width: 400px;
+    width: 300px;
+    margin-top: 5%;
     height: 300px;
     overflow: hidden;
     display: inline-block;
+    border: double 5px var(--lightblue);
 }
 
-.grid-item .img-container:hover img{
-    height: 100%;
-    width: 100%;
-    transition: all 4s;
+.grid-item:hover .img-container img{
+    transform:scale(1.2);
+    transition: all 2s;
+    
 }
 
 .grid-item .img-container img {
-    width: 110%;
+    width: 100%;
     max-width: 500px;
-    height:110%;
+    height:100%;
     overflow: hidden;
     transition: all 5s;
+    transform-origin: center;
+    
 }
-
 /*VII. Contact styles*/
 #contacttitle {
     padding: 20px 50px 0 50px;
@@ -463,8 +471,6 @@ ul.flex-table {
 #contact .pic {
     max-width: 450px;
 }
-
-
 
 #contact .contact {
     display: flex;
@@ -671,6 +677,14 @@ footer span.watermark {
         padding: 1.5em 0;
     }
 
+    .grid-item .img-container {
+        width: 300px;
+    }
+
+    .grid-item {
+        margin: 1%;
+    }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -797,6 +811,12 @@ footer span.watermark {
         overflow: hidden;
         position: relative;
         margin:auto;
+    }
+    .grid-item {
+        margin: 10px;
+    }
+    .grid-item .img-container {
+        width: 400px;
     }
     form {
         margin: auto;
