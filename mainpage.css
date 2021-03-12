@@ -175,6 +175,7 @@ span.icon-bar {
 }
 
 /*III. Nav Menu styles*/
+
 nav ul.nav li a {
     color: var(--navy);
     transition: all .5s;
@@ -254,10 +255,26 @@ nav.sticky button.navbar-toggler span{
     color: var(--beige);
 }
 /* IV. Home section styles*/
-.cover {
-    background:#f2ece9f2 url(images/headercover.jpg) center left no-repeat fixed;
+.loaded .cover::before {
+    animation: fadeIn ease-in 1s forwards;
+}
+ 
+@keyframes fadeIn {
+  60% {
+    opacity: 0;
+  }
+   
+  100% {
+    opacity: 1;
+  }
+}
+
+.cover::before {
+    content: "";
+    background:url(images/headercover.jpg) #f2ece9f2 center left no-repeat fixed;
     background-blend-mode:screen;
     background-size: cover;
+    opacity: 0;
     height: 100vh;
     min-height: 600px;
     width: 100%;
@@ -267,6 +284,22 @@ nav.sticky button.navbar-toggler span{
     top:0;
     left:0;
     margin:auto;
+    display: inline-block;
+    z-index: 1;
+}
+
+.cover {
+    background:#f2ece9f2;
+    height: 100vh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    top:0;
+    left:0;
+    margin:auto;
+    z-index: 5;
 }
 
 .cover-portfolio {
@@ -621,7 +654,12 @@ footer span.watermark {
     #home {
         min-height: 600px;
     }
-
+    .container-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 6;
+    }
     .cover {
         animation:none;
         background-size: cover;
@@ -751,7 +789,12 @@ footer span.watermark {
     }
     .container-cover {
         height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 6;
     }
+    
     #logo {
         display: block;
         width: 70px;

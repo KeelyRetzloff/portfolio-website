@@ -343,10 +343,15 @@
         $("a").smoothScroll({
           speed: 1000,
         });
-
+        
         
       }); // end ready
 
+
+      window.addEventListener("load", () => {
+      document.querySelector("body").classList.add("loaded"); 
+      });
+      
       $(window).scroll(function () {
         if ($(document).scrollTop() > 700) {
           $("nav").addClass("sticky");
