@@ -99,6 +99,7 @@ h3 {
     margin: auto;
     padding: 5px;
     font-size: 1.4em;
+    letter-spacing: 1px;
     color: var(--beige);
 }
 
@@ -271,7 +272,7 @@ nav.sticky button.navbar-toggler span{
 
 .cover::before {
     content: "";
-    background:url(images/headercover.jpg) #f2ece9f2 center left no-repeat fixed;
+    background:url(images/headercover.jpg) #f2ece9f2 center right no-repeat fixed;
     background-blend-mode:screen;
     background-size: cover;
     opacity: 0;
@@ -455,6 +456,7 @@ ul.flex-table {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows:  repeat(auto-fit, 1fr);
+    padding-bottom: 50px;
 }
 
 .grid-item{
@@ -472,7 +474,7 @@ ul.flex-table {
 }
 
 .grid-item .img-container {
-    width: 300px;
+    width: 92%;
     margin-top: 5%;
     height: 300px;
     overflow: hidden;
@@ -551,7 +553,7 @@ form input {
 
 form .btn {
     margin: 16px auto;
-    width: 30%;
+    width: 40%;
     display: block;
 }
 
@@ -593,10 +595,10 @@ form textarea {
 }
 
 .footer {
-    padding: 30px 0 25px 0;
+    padding: 30px 0;
     color: var(--beige);
     background-color: var(--navy);
-    height: 130px;
+    height: 145px;
 }
 
 footer span.watermark {
@@ -605,14 +607,17 @@ footer span.watermark {
     font-style: normal;
     font-size: 1.1em;
     padding: 0 8px;
-
+    display: inline-block;
+    position: relative;
+    bottom:2px;
+    left: 0;
 }
 
 .socialmedia {
     text-align: center;
     display: flex;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     padding: 0;
 }
 
@@ -621,17 +626,9 @@ footer span.watermark {
     padding: 10px;
 }
 
-.socialmedia li a:focus, .socialmedia li a:visited {
-    color:var(--beige);
-}
-
-.socialmedia li a:hover {
-    color: var(--red);
-}
-
 .socialmedia li {
     list-style-type: none;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 
@@ -654,11 +651,17 @@ footer span.watermark {
     #home {
         min-height: 600px;
     }
+    .cover::before {
+        background-position: center;
+    }
     .container-cover {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 6;
+    }
+    .container {
+        min-width: 100%;
     }
     .cover {
         animation:none;
@@ -678,7 +681,7 @@ footer span.watermark {
     }
 
     button.discover {
-        width: 100%;
+        width: 91%;
         font-size: 1.2em;
     }
 
@@ -715,14 +718,30 @@ footer span.watermark {
         padding: 1.5em 0;
     }
 
-    .grid-item .img-container {
-        width: 300px;
-    }
-
     .grid-item {
-        margin: 1%;
+        margin: 2% 3%;
     }
 
+    .navbar-toggler {
+        padding-right: 0;
+    }
+
+    .formcontainer form {
+        margin: 0 1%;
+    }
+
+    form .btn {
+        width: 100%;
+    }
+
+    .socialmedia li img {
+        width: 32px;
+    }
+    #aboutmetitle::after, #portfoliotitle::after, #contactitle::after {
+    width:40%;
+    left:30%;
+    margin-top: 75px;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -857,9 +876,6 @@ footer span.watermark {
     }
     .grid-item {
         margin: 10px;
-    }
-    .grid-item .img-container {
-        width: 400px;
     }
     form {
         margin: auto;
