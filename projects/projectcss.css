@@ -54,7 +54,7 @@ img {
 .jumbotron {
   text-align: center;
   margin-bottom: 0;
-  margin-top: 40px;
+  margin-top: 70px;
   padding-bottom: 0;
   background: none;
 }
@@ -68,7 +68,7 @@ div.nav .btn {
   text-decoration: none;
   font-family: grad, serif;
   margin: 10px;
-  padding: 8px 30px !important;
+  padding: 6px 25px !important;
 }
 
  div.nav .btn:hover {
