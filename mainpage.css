@@ -31,6 +31,7 @@ body {
     font-family: soleil, sans-serif;
     font-style: normal;
     font-weight: 300;
+    
 }
 
 * {
@@ -38,11 +39,7 @@ body {
     box-sizing: border-box;
 }
 
-a {
-    color: var(--beige);
-}
-
-a:focus, a:visited {
+a, a:focus, a:visited {
     color: var(--beige);
 }
 
@@ -324,7 +321,7 @@ nav.sticky button.navbar-toggler span{
     color: var(--beige);
 }
 /* IV. Home section styles*/
-.loaded .cover::before {
+.loaded #home .container::before {
     animation: fadeIn ease-in 1s forwards;
 }
  
@@ -338,23 +335,21 @@ nav.sticky button.navbar-toggler span{
   }
 }
 
-.cover::before {
+#home .container::before {
     content: "";
-    background:url(images/headercover.jpg) #f2ece9f2 center right no-repeat fixed;
+    background:url(images/headercover.jpg) #f2ece9f2 center right fixed no-repeat;
     background-blend-mode:screen;
     background-size: cover;
     opacity: 0;
-    height: 100vh;
+    height: 100%;
     min-height: 600px;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
-    position: relative;
+    position: absolute;
     top:0;
     left:0;
-    margin:auto;
-    display: inline-block;
-    z-index: 1;
+    margin:auto;  
 }
 
 .cover {
@@ -362,13 +357,12 @@ nav.sticky button.navbar-toggler span{
     height: 100vh;
     min-height: 600px;
     width: 100%;
-    overflow: hidden;
     object-fit: cover;
     position: relative;
     top:0;
     left:0;
     margin:auto;
-    z-index: 5;
+    z-index: 3;
 }
 
 .cover-portfolio {
@@ -397,6 +391,13 @@ nav.sticky button.navbar-toggler span{
 
 .container {
     text-align: center;
+}
+
+.container-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
 }
 
 h1 span {
@@ -451,9 +452,14 @@ a button.discover:hover {
     transition: all ease-in-out .5s;
 }
 
+a:hover + div.arrow-down.center {
+    padding-top: 15px;
+}
+
 .arrow-down {
     padding-top: 45px;
     max-width: 35px;
+    transition: all 1s ease;
 }
 
 /*V. About section styles*/
@@ -735,12 +741,6 @@ footer span.watermark {
     .cover::before {
         background-position: center;
     }
-    .container-cover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 6;
-    }
     .container {
         min-width: 100%;
     }
@@ -889,10 +889,6 @@ footer span.watermark {
     }
     .container-cover {
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 6;
     }
     
     #logo {
