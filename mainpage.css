@@ -818,7 +818,7 @@ footer span.watermark {
     }
     
      #portfoliotitle, #contacttitle {
-        padding: 1.5em 0;
+        padding: 1.5em .4em;
     }
 
     .grid-item {
