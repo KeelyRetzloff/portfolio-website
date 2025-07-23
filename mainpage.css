@@ -399,7 +399,7 @@ nav.sticky button.navbar-toggler span{
 }
 
 .container-cover {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 6;
@@ -581,7 +581,7 @@ ul.flex-table {
 
 .grid-item:hover .img-container img{
     transform:scale(1.075);
-    transition: all 1.5s;
+    transition: all 1s ease;
 }
 
 .grid-item .img-container img {
@@ -589,7 +589,7 @@ ul.flex-table {
     max-width: 500px;
     height:100%;
     overflow: hidden;
-    transition: all 5s;
+    transition: all 1s ease;
     transform-origin: center;
     
 }
